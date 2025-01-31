@@ -1,0 +1,51 @@
+reading_comments = {
+    1: [
+        "{0} consistently excels in reading comprehension and shows an impressive ability to analyze complex texts.",
+        "{0} demonstrates a passion for reading and frequently explores a variety of genres, often sharing insightful connections with peers.",
+        "{0} not only meets but often exceeds expectations in reading. Their analytical skills and thoughtful contributions enhance class discussions.",
+        "{0} is an enthusiastic reader who tackles challenging literature with confidence. Their ability to interpret themes and character motivations is commendable.",
+        "{0} displays excellent fluency and comprehension, often leading group discussions with insightful observations and questions.",
+        "{0} shows remarkable critical thinking skills and frequently goes above and beyond in assignments. Their dedication to reading is truly impressive.",
+        "{0} demonstrates an advanced ability to read and comprehend even the most challenging texts with ease.",
+        "{0} shows a deep and thoughtful understanding of the material and excels at interpreting the author's intentions.",
+        "{0} exhibits exceptional fluency, not only in decoding words but in understanding the meaning behind them.",
+        "{0} is highly skilled at analyzing literary devices, themes, and character development, often making connections beyond the text.",
+        "{0} continually sets a high standard in reading comprehension and is an active, thoughtful contributor to group discussions.",
+        "{0} consistently reads with a high level of understanding and curiosity, always eager to explore new genres and ideas.",
+        "{0} demonstrates remarkable independence in reading and frequently brings new insights to class through their thorough analysis.",
+        "{0} excels at reading comprehension and is able to apply the concepts discussed in class to real-world scenarios."
+    ],
+    2: [
+        "{0} demonstrates a solid understanding of the reading material and engages thoughtfully in class discussions.",
+        "{0} meets grade-level expectations in reading and is able to summarize texts accurately. Continued practice with analysis will further enhance their skills.",
+        "{0} is capable of identifying themes and characters in the texts we read. Exploring more complex literature will challenge them to grow.",
+        "{0} participates actively and contributes to group discussions, showing a good grasp of the material. They are encouraged to ask more questions to deepen their understanding.",
+        "{0} consistently completes reading assignments and shows a good comprehension of the content. Focusing on vocabulary development will help them advance further.",
+        "{0} has made steady progress in their reading skills this term. Encouraging independent reading will enhance their confidence and abilities.",
+        "{0} has a good grasp of reading material and demonstrates a solid understanding of the main ideas and themes.",
+        "{0} is able to summarize the content of texts clearly and accurately but would benefit from deeper exploration of underlying themes.",
+        "{0} engages well with the material and is progressing well in understanding the texts. Focused practice will continue to improve fluency.",
+        "{0} is able to grasp the main ideas of the texts but could benefit from more detailed analysis of characters and plot.",
+        "{0} demonstrates a strong understanding of character development and is working towards improving their analysis of literary themes.",
+        "{0} consistently completes assignments and demonstrates a good level of comprehension, though additional focus on interpretation will enhance their skills.",
+        "{0} continues to show progress in reading, and with more practice, they will continue to refine their analytical skills.",
+        "{0} is an engaged reader who contributes to discussions, but further exploration of more complex texts would enhance their growth."
+    ],
+    3: [
+        "{0} has shown some difficulty in understanding key reading concepts this term. Additional support and practice will be beneficial.",
+        "{0} participates in class, but they often struggle to grasp the main ideas of the texts we read. Focused reading exercises at home can help improve comprehension.",
+        "{0} finds it challenging to summarize what they read. Regular practice with guided questions may help strengthen this skill.",
+        "{0} displays a limited vocabulary that affects their reading fluency. Encouraging reading a variety of texts could help expand their word bank.",
+        "{0} needs to work on staying engaged during reading assignments. I recommend setting specific goals for each reading session to improve focus.",
+        "{0} has potential but requires more effort to keep up with grade-level expectations. Extra reading practice and support in class would be beneficial.",
+        "{0} has difficulty understanding and analyzing key elements of the texts we read. Additional support is needed to build comprehension skills.",
+        "{0} often struggles with the main ideas and themes in the readings. More focused practice with reading comprehension exercises will be beneficial.",
+        "{0} needs more practice in identifying key concepts and summarizing texts accurately. Consistent reading at home can improve fluency.",
+        "{0} often finds it difficult to engage with the material, and additional reading strategies or one-on-one support may help them build focus.",
+        "{0} would benefit from regular practice with vocabulary to improve fluency and comprehension in reading assignments.",
+        "{0} has potential in reading but needs extra support to keep pace with grade-level expectations.",
+        "{0} needs to work on staying focused during reading sessions. Short, regular reading sessions with goals may help improve engagement.",
+        "{0} requires additional help to improve their comprehension of social studies material and engage more fully in class discussions.",
+        "{0} struggles with reading comprehension and needs additional help to develop more effective strategies for understanding texts."
+    ]
+}
