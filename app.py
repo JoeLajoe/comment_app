@@ -30,7 +30,7 @@ def validate_name(name):
 
 # Function to write comments to file
 def write_comments_to_file(students, subject, grade, write_mode):
-    output_dir = "generated_files"
+    output_dir = "generate_comments"  # Change this to your new folder name
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
 
