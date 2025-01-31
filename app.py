@@ -56,17 +56,35 @@ def generate_comments():
         # Get form data
         grade = int(request.form['grade'])
         subject = request.form['subject'].lower()
+
+        # Ensure the subject is valid
+        if subject not in subject_comments:
+            return "Invalid subject. Please try again."
+
+        # Validate grade (5-8)
+        if grade not in [5, 6, 7, 8]:
+            return "Invalid grade. Please enter a grade between 5 and 8."
+
         students = {}
         student_entries = request.form['students'].split('\n')
 
         # Validate and add students
         for entry in student_entries:
-            if entry.strip():
-                name, code = entry.split(',')
-                name = name.strip()
-                code = int(code.strip())
-                if validate_name(name) and code in [1, 2, 3]:
-                    students[name] = code
+            if entry.strip():  # Ignore empty lines
+                try:
+                    name, code = entry.split(',')
+                    name = name.strip()
+                    code = int(code.strip())
+
+                    # Validate name and code
+                    if validate_name(name) and code in [1, 2, 3]:
+                        students[name] = code
+                    else:
+                        print(f"Skipping invalid entry: {entry.strip()}")  # Debug print
+
+                except ValueError:
+                    print(f"Invalid format for entry: {entry.strip()}")  # Debug print
+                    continue
 
         # If no valid students were entered, show an error
         if not students:
