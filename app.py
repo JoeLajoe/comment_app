@@ -51,12 +51,17 @@ def write_comments_to_file(students, subject, grade, write_mode):
 
         with open(output_file, write_mode) as file:
             for student, code in students.items():
-                if code - 1 >= len(subject_comments[subject]):
-                    print(f"❌ ERROR: Code {code} is out of range for subject '{subject}'.")
+                if code not in subject_comments[subject]:  # Check if the key exists
+                    print(f"❌ ERROR: Code {code} not found in subject '{subject}'.")
                     return None
 
-                comment = random.choice(subject_comments[subject][code - 1]).format(student)
-                file.write(f"{student}, {code}: {comment}\n")
+            comment_list = subject_comments[subject][code]  # Get the correct list
+            if not comment_list:
+                print(f"❌ ERROR: No comments available for code {code} in subject '{subject}'.")
+                return None
+
+            comment = random.choice(comment_list).format(student)
+            file.write(f"{student}, {code}: {comment}\n")
 
         print(f"✅ Output file successfully created: {output_file}")
         return output_file
