@@ -30,34 +30,38 @@ def validate_name(name):
 
 # Function to write comments to file
 def write_comments_to_file(students, subject, grade, write_mode):
-    output_dir = "generate_comments"  # Ensure this matches your folder name
+    output_dir = "generate_comments"  # Ensure this folder exists
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
 
     output_file = os.path.join(output_dir, f"Grade_{grade}_{subject.capitalize()}_comments.txt")
 
     try:
+        # Debug: Print student details before writing
+        print(f"Writing comments for subject: {subject}, grade: {grade}")
+        print(f"Students and codes: {students}")
+
         with open(output_file, write_mode) as file:
             for student, code in students.items():
                 if subject not in subject_comments:
-                    print(f"Error: Subject '{subject}' not found in subject_comments dictionary.")
+                    print(f"❌ ERROR: Subject '{subject}' not found in subject_comments dictionary.")
                     return None
                 
                 if not subject_comments[subject]:
-                    print(f"Error: No comments available for subject '{subject}'.")
+                    print(f"❌ ERROR: No comments available for subject '{subject}'.")
                     return None
 
                 if code - 1 >= len(subject_comments[subject]):
-                    print(f"Error: Code {code} is out of range for subject '{subject}'.")
+                    print(f"❌ ERROR: Code {code} is out of range for subject '{subject}'.")
                     return None
 
                 comment = random.choice(subject_comments[subject][code - 1]).format(student)
                 file.write(f"{student}, {code}: {comment}\n")
 
-        print(f"Output file path: {output_file}")  # Debugging output
+        print(f"✅ Output file successfully created: {output_file}")  # Success message
         return output_file
     except Exception as e:
-        print(f"Error writing to file: {e}")
+        print(f"❌ Exception Occurred: {str(e)}")  # Print the exact error
         return None
 
 @app.route('/')
