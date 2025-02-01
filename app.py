@@ -53,15 +53,16 @@ def write_comments_to_file(students, subject, grade, write_mode):
             for student, code in students.items():
                 if code not in subject_comments[subject]:  # Check if the key exists
                     print(f"❌ ERROR: Code {code} not found in subject '{subject}'.")
-                    return None
+                    continue  # Skip this student instead of returning None
 
-            comment_list = subject_comments[subject][code]  # Get the correct list
-            if not comment_list:
-                print(f"❌ ERROR: No comments available for code {code} in subject '{subject}'.")
-                return None
+                # 🔥 Move these lines inside the loop 🔥
+                comment_list = subject_comments[subject][code]  # Get the correct list
+                if not comment_list:
+                    print(f"❌ ERROR: No comments available for code {code} in subject '{subject}'.")
+                    continue
 
-            comment = random.choice(comment_list).format(student)
-            file.write(f"{student}, {code}: {comment}\n")
+                comment = random.choice(comment_list).format(student)
+                file.write(f"{student}, {code}: {comment}\n")  # Write each student’s comment
 
         print(f"✅ Output file successfully created: {output_file}")
         return output_file
