@@ -47,7 +47,7 @@ def write_comments_to_file(students, subject, grade, write_mode):
             print(f"❌ ERROR: No comments available for subject '{subject}'.")
             return None
 
-        print(f"✅ Comment structure: {subject_comments[subject]}")  # Print actual structure
+        #print(f"✅ Comment structure: {subject_comments[subject]}")  # Print actual structure
 
         with open(output_file, write_mode) as file:
             for student, code in students.items():
