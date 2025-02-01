@@ -37,20 +37,20 @@ def write_comments_to_file(students, subject, grade, write_mode):
     output_file = os.path.join(output_dir, f"Grade_{grade}_{subject.capitalize()}_comments.txt")
 
     try:
-        # Debug: Print student details before writing
-        print(f"Writing comments for subject: {subject}, grade: {grade}")
-        print(f"Students and codes: {students}")
+        print(f"✅ Checking subject: {subject}")  # Debugging step
+        
+        if subject not in subject_comments:
+            print(f"❌ ERROR: Subject '{subject}' not found in subject_comments dictionary.")
+            return None
+
+        if not subject_comments[subject]:
+            print(f"❌ ERROR: No comments available for subject '{subject}'.")
+            return None
+
+        print(f"✅ Comment structure: {subject_comments[subject]}")  # Print actual structure
 
         with open(output_file, write_mode) as file:
             for student, code in students.items():
-                if subject not in subject_comments:
-                    print(f"❌ ERROR: Subject '{subject}' not found in subject_comments dictionary.")
-                    return None
-                
-                if not subject_comments[subject]:
-                    print(f"❌ ERROR: No comments available for subject '{subject}'.")
-                    return None
-
                 if code - 1 >= len(subject_comments[subject]):
                     print(f"❌ ERROR: Code {code} is out of range for subject '{subject}'.")
                     return None
@@ -58,10 +58,10 @@ def write_comments_to_file(students, subject, grade, write_mode):
                 comment = random.choice(subject_comments[subject][code - 1]).format(student)
                 file.write(f"{student}, {code}: {comment}\n")
 
-        print(f"✅ Output file successfully created: {output_file}")  # Success message
+        print(f"✅ Output file successfully created: {output_file}")
         return output_file
     except Exception as e:
-        print(f"❌ Exception Occurred: {str(e)}")  # Print the exact error
+        print(f"❌ Exception Occurred: {e}")  # More detailed error message
         return None
 
 @app.route('/')
