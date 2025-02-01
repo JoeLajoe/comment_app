@@ -30,28 +30,35 @@ def validate_name(name):
 
 # Function to write comments to file
 def write_comments_to_file(students, subject, grade, write_mode):
-    output_dir = "generate_comments"  # Change this to your new folder name
-    
-    # Check if the directory exists and create it if not
+    output_dir = "generate_comments"  # Ensure this matches your folder name
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
-        print(f"Directory created: {output_dir}")
-    
-    # Construct the file path
+
     output_file = os.path.join(output_dir, f"Grade_{grade}_{subject.capitalize()}_comments.txt")
-    print(f"Output file path: {output_file}")  # Debug print
-    
+
     try:
         with open(output_file, write_mode) as file:
             for student, code in students.items():
+                if subject not in subject_comments:
+                    print(f"Error: Subject '{subject}' not found in subject_comments dictionary.")
+                    return None
+                
+                if not subject_comments[subject]:
+                    print(f"Error: No comments available for subject '{subject}'.")
+                    return None
+
+                if code - 1 >= len(subject_comments[subject]):
+                    print(f"Error: Code {code} is out of range for subject '{subject}'.")
+                    return None
+
                 comment = random.choice(subject_comments[subject][code - 1]).format(student)
                 file.write(f"{student}, {code}: {comment}\n")
-        print(f"File written successfully to {output_file}")  # Debug print
+
+        print(f"Output file path: {output_file}")  # Debugging output
         return output_file
     except Exception as e:
         print(f"Error writing to file: {e}")
         return None
-
 
 @app.route('/')
 def index():
